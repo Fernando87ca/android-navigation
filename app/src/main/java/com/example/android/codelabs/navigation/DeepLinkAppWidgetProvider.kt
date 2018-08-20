@@ -23,24 +23,23 @@ import android.os.Bundle
 import android.widget.RemoteViews
 
 
-
 /**
  * App Widget that deep links you to the [DeepLinkFragment].
  */
 class DeepLinkAppWidgetProvider : AppWidgetProvider() {
-    override fun onUpdate(
-        context: Context,
-        appWidgetManager: AppWidgetManager,
-        appWidgetIds: IntArray
-    ) {
-        val remoteViews = RemoteViews(
-            context.packageName,
-            R.layout.deep_link_appwidget
-        )
+  override fun onUpdate(
+    context: Context,
+    appWidgetManager: AppWidgetManager,
+    appWidgetIds: IntArray
+  ) {
+    val remoteViews = RemoteViews(
+      context.packageName,
+      R.layout.deep_link_appwidget
+    )
 
-        val args = Bundle()
-        args.putString("myarg", "From Widget")
-        // TODO Step 11 - construct and set a PendingIntent using DeepLinkBuilder
+    val args = Bundle()
+    args.putString("myarg", "From Widget")
+    // TODO Step 11 - construct and set a PendingIntent using DeepLinkBuilder
 //        val pendingIntent = NavDeepLinkBuilder(context)
 //            .setGraph(R.navigation.mobile_navigation)
 //            .setDestination(R.id.android)
@@ -48,7 +47,7 @@ class DeepLinkAppWidgetProvider : AppWidgetProvider() {
 //            .createPendingIntent()
 //
 //        remoteViews.setOnClickPendingIntent(R.id.deep_link, pendingIntent)
-        // TODO ENDSTEP 11
-        appWidgetManager.updateAppWidget(appWidgetIds, remoteViews)
-    }
+    // TODO ENDSTEP 11
+    appWidgetManager.updateAppWidget(appWidgetIds, remoteViews)
+  }
 }

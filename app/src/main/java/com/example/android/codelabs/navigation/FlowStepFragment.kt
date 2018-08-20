@@ -28,32 +28,31 @@ import androidx.navigation.Navigation
  */
 class FlowStepFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        setHasOptionsMenu(true)
+  override fun onCreateView(inflater: LayoutInflater,
+                            container: ViewGroup?,
+                            savedInstanceState: Bundle?): View? {
+    setHasOptionsMenu(true)
 
-        val step = arguments?.getInt("step")
+    val step = arguments?.getInt("step")
 
-        // TODO STEP 9 - Use type-safe arguments - remove previous line!
+    // TODO STEP 9 - Use type-safe arguments - remove previous line!
 //        val step = arguments?.let {
 //            val safeArgs = FlowStepFragmentArgs.fromBundle(it)
 //            safeArgs.step
 //        }
-        // TODO ENDSTEP 9
+    // TODO ENDSTEP 9
 
-        return when (step) {
-            2 -> inflater.inflate(R.layout.flow_step_two_fragment, container, false)
-            else -> inflater.inflate(R.layout.flow_step_one_fragment, container, false)
-        }
+    return when (step) {
+      2 -> inflater.inflate(R.layout.flow_step_two_fragment, container, false)
+      else -> inflater.inflate(R.layout.flow_step_one_fragment, container, false)
     }
+  }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<View>(R.id.next_button).setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.next_action)
-        )
-    }
+    view.findViewById<View>(R.id.next_button).setOnClickListener(
+      Navigation.createNavigateOnClickListener(R.id.next_action)
+    )
+  }
 }
