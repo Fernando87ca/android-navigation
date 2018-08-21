@@ -55,27 +55,6 @@ class MainFragment : Fragment() {
     destButton?.setOnClickListener {
       findNavController(it).navigate(R.id.next_action, null, null)
     }
-
-    //TODO STEP 6 - Set NavOptions
-
-//        val options = NavOptions.Builder()
-//            .setEnterAnim(R.anim.slide_in_right)
-//            .setExitAnim(R.anim.slide_out_left)
-//            .setPopEnterAnim(R.anim.slide_in_left)
-//            .setPopExitAnim(R.anim.slide_out_right)
-//            .build()
-//
-//        view.findViewById<Button>(R.id.navigate_dest_bt)?.setOnClickListener {
-//            findNavController(it).navigate(R.id.flow_step_one, null, options)
-//        }
-    //TODO ENDSTEP 6
-
-    //TODO STEP 7 - Update the OnClickListener to navigate using an action
-//        view.findViewById<Button>(R.id.navigate_action_bt)?.setOnClickListener(
-//                Navigation.createNavigateOnClickListener(R.id.next_action, null)
-//        )
-
-    //TODO ENDSTEP 7
   }
 
   override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
