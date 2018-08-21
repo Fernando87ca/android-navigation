@@ -20,7 +20,9 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.*
 import android.widget.Button
+import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 
 /**
  * Fragment used to show how to navigate to another destination
@@ -37,11 +39,22 @@ class MainFragment : Fragment() {
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
 
-
     val destButton = view.findViewById<Button>(R.id.navigate_dest_bt)
-    destButton?.setOnClickListener(
+    /*destButton?.setOnClickListener(
       Navigation.createNavigateOnClickListener(R.id.flow_step_one, null)
-    )
+    )*/
+
+    // Cambiado porque lo he puesto en el navigation menu
+    /*val options = NavOptions.Builder()
+      .setEnterAnim(R.anim.slide_in_right)
+      .setExitAnim(R.anim.slide_out_left)
+      .setPopEnterAnim(R.anim.slide_in_left)
+      .setPopExitAnim(R.anim.slide_out_right)
+      .build()*/
+
+    destButton?.setOnClickListener {
+      findNavController(it).navigate(R.id.next_action, null, null)
+    }
 
     //TODO STEP 6 - Set NavOptions
 
